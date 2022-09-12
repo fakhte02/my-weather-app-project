@@ -1,6 +1,36 @@
 
-    h1 {
-        color: brown;
-        text-align: center;
-    }
+    .weather {
+  background-color: rgb(239, 255, 253);
+  max-width: 700px;
+  text-align: center;
+  padding: 30px 10px;
+  margin: 70px auto;
+  border:rgb(239, 255, 253) solid 1px;
+  border-radius: 20px;
+}
 
+.row {
+  text-align: center;
+}
+.temperature {
+  font-size: 60px;
+  display: inline;
+  position: relative;
+}
+h3 {
+  color: rgb(5, 80, 82);
+}
+h5 {
+  font-size: 20px;
+}
+li{
+    list-style: none;
+}
+.search-form {
+  margin: 20px auto;
+  text-align: center;
+  padding: 20px ;
+}
+#date{
+  color:rgb(5, 19, 103);
+}
