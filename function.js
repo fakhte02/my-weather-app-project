@@ -37,9 +37,11 @@ displayDate.innerHTML = showTime(currentTime);
 }
 function turnIntoFahrenheit(event) {
   event.preventDefault();
-  let celsiusTemp = document.querySelector(".temperature");
-  let farenheitTemp =  Math.round((celsiusTemp* 9) / 5 + 32);
-  celsiusTemp.innerHTML = (`${farenheitTemp}`) ;
+  let celsiusTemp = document.querySelector(".temperature").innerHTML;
+  let celsiusTemp2 = document.querySelector(".temperature");
+  let farenheitTemp =  Math.round((parseInt(celsiusTemp)* 9) / 5 + 32);
+  console.log(farenheitTemp);
+  celsiusTemp2.innerHTML = farenheitTemp;
 }
 
 function turnIntoCelsius(event) {
