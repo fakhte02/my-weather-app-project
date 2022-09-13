@@ -108,7 +108,7 @@ function getPosition(position) {
 }
   let lat =  roundToTwo(position.coords.latitude)
   let lon = roundToTwo(position.coords.longitude)
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&limit=5&appid=319e44803780b53e2c950310fec6fdb3`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&limit=5&appid=319e44803780b53e2c950310fec6fdb3&units=metric`;
   console.log(apiUrl);
   console.log(position);
   function getTemp(response) {
