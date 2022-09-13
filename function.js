@@ -108,13 +108,18 @@ function getPosition(position) {
 }
   let lat =  roundToTwo(position.coords.latitude)
   let lon = roundToTwo(position.coords.longitude)
+  
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&limit=5&appid=319e44803780b53e2c950310fec6fdb3&units=metric`;
   console.log(apiUrl);
   console.log(position);
   function getTemp(response) {
+    let cityElement = document.querySelector("#city");
+    let weatherName = document.querySelector("#weather-name");
     let tempElement = document.querySelector(".temperature");
     let temp = Math.round(response.data.main.temp);
     tempElement.innerHTML = `${temp}`;
+    cityElement.innerHTML = response.data.name;
+    weatherName.innerHTML = response.data.weather[0].main
   
   }
   axios.get(apiUrl).then(getTemp);
