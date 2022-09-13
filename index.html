@@ -17,24 +17,24 @@
     <div class="weather">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 offset-sm-2">
-                    <i class="fas fa-cloud-showers-heavy" style="font-size: 100px; color:rgb(5, 19, 103)"></i>
+                <div class="col-sm-4 offset-sm-2" >
+                    <i class="fas fa-cloud-showers-heavy" id="weather-icon" style="font-size: 100px; color:rgb(5, 19, 103)"></i>
                     </em>
-                    <h3>
-                        Showers
+                    <h3 id="weather-name">
+                        Weather Type
                     </h3>
                     <li id="date"></li>
                 </div>
-                <div class="col-sm-2 offset-sm-0">
+                <div class="col-sm-6 offset-sm-0">
                     <h1 id="city">
-                        Tehran
+                        City
                     </h1>
                     <div class="temperature">
-                        7
+                        Temprature
                     </div>
                     <h5>
                         <div class="units">
-                            <a href="#" id="celsius-link">°C</a> |
+                            <a href="#"  id="celsius-link">°C</a> |
                             <a href="#" id="fahrenheit-link">°F</a>
                         </div>
                     </h5>
@@ -62,5 +62,5 @@
         </div>
 </body>
 <script src="function.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </html>
