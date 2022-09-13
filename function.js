@@ -44,6 +44,7 @@ function search(event) {
   .then(function (response) {
     // handle success
     // console.log(response.data);
+    celsiusLink.innerHTML = "";
     cityElement.innerHTML = cityInput.value;
     temperatureElement.innerHTML = Math.round(response.data.main.temp)
     weatherName.innerHTML = response.data.weather[0].main
@@ -74,10 +75,15 @@ function turnIntoFahrenheit(event) {
   let celsiusTemp = document.querySelector(".temperature");
   let farenheitTemp = Math.round((celsius * 9) / 5 + 32);
   celsiusTemp.innerHTML = `${farenheitTemp}`;
+  celsiusLink.innerHTML = "°C";
+
+  
 }
 
 function turnIntoCelsius(event) {
   event.preventDefault();
+  celsiusLink.innerHTML = "";
+
   let temperatureElement = document.querySelector(".temperature").innerHTML;
   let temperatureElement2 = document.querySelector(".temperature");
   let celiusTemp = Math.round((temperatureElement -32) * 5/9 );
