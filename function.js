@@ -48,7 +48,6 @@ function search(event) {
     cityElement.innerHTML = cityInput.value;
     temperatureElement.innerHTML = Math.round(response.data.main.temp)
     weatherName.innerHTML = response.data.weather[0].main
-    // weatherIcon.classList.add(`fas fa-cloud-${weatherName.innerHTML}`)
   
   })
   .catch(function (error) {
@@ -64,16 +63,14 @@ function search(event) {
     }
     console.log(error.config);
   })
-  .then(function () {
-
-  });
+ 
 
 }
 function turnIntoFahrenheit(event) {
   event.preventDefault();
   let celsius = document.querySelector(".temperature").innerHTML;
   let celsiusTemp = document.querySelector(".temperature");
-  let farenheitTemp = Math.round((celsius * 9) / 5 + 32);
+  let farenheitTemp = Math.round((celsius * 9) / 5 + 32); 
   celsiusTemp.innerHTML = `${farenheitTemp}`;
   celsiusLink.innerHTML = "°C";
 
@@ -99,18 +96,29 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", turnIntoCelsius);
 
 let apiKey = "319e44803780b53e2c950310fec6fdb3";
-let apiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?q=tehran&appid=319e44803780b53e2c950310fec6fdb3&units=metric";
 
-function getTemp(response) {
-  let tempElement = document.querySelector(".temperature");
-  let temp = Math.round(response.data.main.temp);
-  tempElement.innerHTML = `${temp}`;
-}
+
+
+
 
 //then(getTemp);
 function getPosition(position) {
+  function roundToTwo(num) {
+    return +(Math.round(num + "e+2")  + "e-2");
+}
+  let lat =  roundToTwo(position.coords.latitude)
+  let lon = roundToTwo(position.coords.longitude)
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&limit=5&appid=319e44803780b53e2c950310fec6fdb3`;
+  console.log(apiUrl);
   console.log(position);
+  function getTemp(response) {
+    let tempElement = document.querySelector(".temperature");
+    let temp = Math.round(response.data.main.temp);
+    tempElement.innerHTML = `${temp}`;
+  
+  }
+  axios.get(apiUrl).then(getTemp);
 }
 
 navigator.geolocation.getCurrentPosition(getPosition);
+
