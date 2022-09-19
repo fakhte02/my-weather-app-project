@@ -114,7 +114,7 @@ function getPosition(position) {
   console.log(apiUrl);
   console.log(position);
   function getTemp(response) {
-    Event.preventDefault();
+
     let cityElement = document.querySelector("#city");
     let weatherName = document.querySelector("#weather-name");
     let tempElement = document.querySelector(".temperature");
