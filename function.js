@@ -104,7 +104,6 @@ let apiKey = "319e44803780b53e2c950310fec6fdb3";
 //then(getTemp);
 function getPosition(position) {
   function roundToTwo(num) {
-    Event.preventDefault();
     return +(Math.round(num + "e+2")  + "e-2");
 }
   let lat =  roundToTwo(position.coords.latitude)
