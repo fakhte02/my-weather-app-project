@@ -44,6 +44,7 @@ function search(event) {
   .then(function (response) {
     // handle success
     // console.log(response.data);
+    Event.preventDefault();
     celsiusLink.innerHTML = "";
     cityElement.innerHTML = cityInput.value;
     temperatureElement.innerHTML = Math.round(response.data.main.temp)
@@ -103,7 +104,9 @@ let apiKey = "319e44803780b53e2c950310fec6fdb3";
 
 //then(getTemp);
 function getPosition(position) {
+  Event.preventDefault();
   function roundToTwo(num) {
+    Event.preventDefault();
     return +(Math.round(num + "e+2")  + "e-2");
 }
   let lat =  roundToTwo(position.coords.latitude)
@@ -113,6 +116,7 @@ function getPosition(position) {
   console.log(apiUrl);
   console.log(position);
   function getTemp(response) {
+    Event.preventDefault();
     let cityElement = document.querySelector("#city");
     let weatherName = document.querySelector("#weather-name");
     let tempElement = document.querySelector(".temperature");
