@@ -90,7 +90,7 @@ function search(event) {
 }
 function turnIntoFahrenheit(event) {
 
-
+fahrenheitLink.innerHTML=""
   let celsius = document.querySelector(".temperature").innerHTML;
   let celsiusTemp = document.querySelector(".temperature");
   let farenheitTemp = Math.round((celsius * 9) / 5 + 32);
@@ -130,6 +130,8 @@ function getPosition(position) {
   console.log(apiUrl);
   console.log(position);
   function getTemp(response) {
+  celsiusLink.innerHTML = "";
+
 
     let cityElement = document.querySelector("#city");
     let weatherName = document.querySelector("#weather-name");
