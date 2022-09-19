@@ -33,7 +33,7 @@ function turnIntoCelsius(event) {
 }
 
 function search(event) {
-  event.preventDefault();
+  
   let cityElement = document.querySelector("#city");
   let cityInput = document.querySelector("#city-input");
   let temperatureElement = document.querySelector(".temperature");
@@ -44,7 +44,7 @@ function search(event) {
   .then(function (response) {
     // handle success
     // console.log(response.data);
-    Event.preventDefault();
+    
     celsiusLink.innerHTML = "";
     cityElement.innerHTML = cityInput.value;
     temperatureElement.innerHTML = Math.round(response.data.main.temp)
@@ -68,7 +68,7 @@ function search(event) {
 
 }
 function turnIntoFahrenheit(event) {
-  event.preventDefault();
+
   let celsius = document.querySelector(".temperature").innerHTML;
   let celsiusTemp = document.querySelector(".temperature");
   let farenheitTemp = Math.round((celsius * 9) / 5 + 32); 
@@ -79,7 +79,6 @@ function turnIntoFahrenheit(event) {
 }
 
 function turnIntoCelsius(event) {
-  event.preventDefault();
   celsiusLink.innerHTML = "";
 
   let temperatureElement = document.querySelector(".temperature").innerHTML;
@@ -104,7 +103,6 @@ let apiKey = "319e44803780b53e2c950310fec6fdb3";
 
 //then(getTemp);
 function getPosition(position) {
-  Event.preventDefault();
   function roundToTwo(num) {
     Event.preventDefault();
     return +(Math.round(num + "e+2")  + "e-2");
